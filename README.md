@@ -1,2 +1,3 @@
-# subtitle_extract
-extract subtitles through video in web brower using recording and ocr
+
+# Subtitle Extract
+extract subtitles through video in web browser using recording and OCR
