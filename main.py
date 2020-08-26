@@ -1,10 +1,15 @@
-from PIL import Image
-from image_to_string import ImageToString
+from services.args_parser import args
+from models.srt_file import SrtFile
+from controllers.subtitles_controller import SubtitlesController
+from workers.screen_recorder import ScreenRecorder
+# from constants import START_TIME
 
 
 def run():
-    image = Image.open('tests/data/image_ukr_input_1.png')
-    print(ImageToString(image).convert())
+    # print(START_TIME)
+    srt_file = SrtFile(args.subtitles_path)
+    subtitles_controller = SubtitlesController(srt_file)
+    ScreenRecorder(subtitles_controller).run()
 
 
 if __name__ == '__main__':
